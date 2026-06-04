@@ -1,0 +1,727 @@
+/* BlockEditor Styles */
+
+.block-editor {
+  background: #f0f6ff;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #d0e8ff;
+}
+
+.block-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #c0deff;
+}
+
+.block-editor-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+}
+
+.block-editor-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Block Item */
+
+.block-item {
+  background: white;
+  border: 2px solid #d0e8ff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.block-item:hover {
+  box-shadow: 0 3px 12px rgba(0, 123, 255, 0.1);
+  border-color: #a8d0ff;
+}
+
+.block-item.dragging {
+  opacity: 0.3;
+  cursor: grabbing;
+}
+
+/* Collapsed state — other items while a drag is in progress */
+.block-item.collapsed {
+  border-color: #e0e0e0;
+  box-shadow: none;
+  background: #fafafa;
+}
+
+.block-item.collapsed .block-item-header {
+  padding: 8px 15px;
+}
+
+/* Drag Overlay — compact card shown while dragging */
+.block-drag-overlay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  padding: 12px 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  cursor: grabbing;
+  width: 100%;
+}
+
+.block-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0efff;
+}
+
+.drag-handle {
+  cursor: grab;
+  font-size: 1.2rem;
+  color: #6c757d;
+  padding: 5px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.block-type-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.block-item-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.block-item-content {
+  padding: 10px 0;
+}
+
+/* Block Toolbar */
+
+.block-toolbar {
+  background: white;
+  border: 2px solid #d0e8ff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.block-type-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.block-type-item:hover {
+  background: #f8f9fa;
+}
+
+.block-type-icon {
+  font-size: 1.2rem;
+}
+
+/* Text Block (Tiptap Editor) */
+
+.editor-content {
+  border: 2px solid #d0e8ff;
+  border-radius: 0 0 14px 14px;
+  min-height: 200px;
+  background: white;
+}
+
+.editor-toolbar {
+  background: #f0f6ff;
+  border-bottom: 2px solid #d0e8ff;
+  border-radius: 14px 14px 0 0;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.editor-toolbar button {
+  background: white;
+  border: 1px solid #c0d8ff;
+  border-radius: 10px;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.editor-toolbar button:hover {
+  background: #e7f2ff;
+  border-color: #007bff;
+}
+
+.editor-toolbar button.is-active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.editor-toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-separator {
+  color: #dee2e6;
+  margin: 0 5px;
+  user-select: none;
+}
+
+.toolbar-select {
+  background: white;
+  border: 1px solid #c0d8ff;
+  border-radius: 10px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  max-width: 150px;
+}
+
+.toolbar-select:hover {
+  background: #e7f2ff;
+  border-color: #007bff;
+}
+
+.toolbar-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+}
+
+.ProseMirror {
+  padding: 15px;
+  outline: none;
+  min-height: 200px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid #007bff;
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #6c757d;
+}
+
+/* Выравнивание текста в редакторе */
+.ProseMirror [style*="text-align: left"] {
+  text-align: left;
+}
+
+.ProseMirror [style*="text-align: center"] {
+  text-align: center;
+}
+
+.ProseMirror [style*="text-align: right"] {
+  text-align: right;
+}
+
+.ProseMirror [style*="text-align: justify"] {
+  text-align: justify;
+}
+
+/* Изображения в редакторе */
+.ProseMirror img.editor-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.ProseMirror img.float-left {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+
+.ProseMirror img.float-right {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+
+/* Параграфы и другие блочные элементы рядом с float-изображениями */
+.ProseMirror p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Очистка обтекания */
+.ProseMirror::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Ссылки в редакторе */
+.ProseMirror a.editor-link {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ProseMirror a.editor-link:hover {
+  color: #0056b3;
+}
+
+/* Image Block */
+
+.upload-area {
+  border: 2px dashed #a8d0ff;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  background: #f5f9ff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upload-area:hover {
+  border-color: #007bff;
+  background: #e7f3ff;
+}
+
+.upload-area.dragging {
+  border-color: #007bff;
+  background: #e7f3ff;
+}
+
+.image-preview {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Video Block */
+
+.video-preview {
+  margin-top: 15px;
+}
+
+.video-preview iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 12px;
+  border: none;
+}
+
+/* Link Block */
+
+.link-preview {
+  background: #f0f7ff;
+  border: 1px solid #c0d8ff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.link-preview a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-preview a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Block */
+
+.gallery-block {
+  width: 100%;
+}
+
+.gallery-grid {
+  margin-bottom: 1rem;
+}
+
+.gallery-item {
+  background: #f5f9ff;
+  border: 1.5px solid #c0d8ff;
+  border-radius: 12px;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item-preview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddeeff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-item-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item-fields .btn {
+  margin-top: auto;
+}
+
+/* Homework Block */
+
+.homework-config {
+  background: #fff8e6;
+  border: 2px solid #ffc107;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.homework-formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Block Preview */
+
+.block-preview {
+  padding: 8px 0;
+}
+
+.preview-block {
+  margin-bottom: 2rem;
+}
+
+.preview-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #212529;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Выравнивание текста в превью */
+.preview-text [style*="text-align: left"] {
+  text-align: left;
+}
+
+.preview-text [style*="text-align: center"] {
+  text-align: center;
+}
+
+.preview-text [style*="text-align: right"] {
+  text-align: right;
+}
+
+.preview-text [style*="text-align: justify"] {
+  text-align: justify;
+}
+
+/* Изображения в превью */
+.preview-text img.editor-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.preview-text img.float-left {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+
+.preview-text img.float-right {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+
+/* Параграфы и другие блочные элементы рядом с float-изображениями */
+.preview-text p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Очистка обтекания в превью */
+.preview-text::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Ссылки в превью */
+.preview-text a.editor-link {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.preview-text a.editor-link:hover {
+  color: #0056b3;
+}
+
+.preview-text h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.preview-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.preview-text blockquote {
+  border-left: 4px solid #007bff;
+  padding: 0.75rem 1.5rem 0.75rem 1.25rem;
+  margin: 1.25rem 0;
+  color: #4a5568;
+  font-style: italic;
+  font-size: 1.05rem;
+  background: #f0f7ff;
+  border-radius: 0 10px 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.preview-image {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.preview-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.11);
+  display: block;
+}
+
+.preview-image .caption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+}
+
+.preview-video {
+  margin: 1.5rem 0;
+  max-width: 860px;
+}
+
+.preview-video h4 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.preview-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.preview-link {
+  margin: 1rem 0;
+  padding: 16px 20px;
+  background: #f0f7ff;
+  border: 1px solid #cce0ff;
+  border-left: 4px solid #007bff;
+  border-radius: 12px;
+  max-width: 600px;
+  transition: box-shadow 0.2s ease;
+}
+
+.preview-link:hover {
+  box-shadow: 0 3px 12px rgba(0, 123, 255, 0.12);
+}
+
+.preview-link a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview-link a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.preview-homework {
+  background: #fff8e6;
+  border: 1.5px solid #ffc107;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin: 1.5rem 0;
+  max-width: 680px;
+}
+
+.preview-homework h4 {
+  color: #856404;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview-homework-content {
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.preview-homework-meta {
+  font-size: 0.9rem;
+  color: #856404;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ffc107;
+}
+
+/* Empty State */
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+}
+
+/* Preview Gallery */
+
+.preview-gallery {
+  margin: 1.5rem 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .block-editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .block-editor-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .video-preview iframe,
+  .preview-video iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .editor-toolbar {
+    gap: 3px;
+  }
+
+  .editor-toolbar button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
