@@ -1,9 +1,9 @@
-/* ===== ADMIN / BOOTSTRAP DESIGN OVERRIDES =====
+/* ADMIN / BOOTSTRAP DESIGN OVERRIDES 
    Приводит Bootstrap-компоненты к стилю дизайн-системы портала.
    Импортируется глобально, поэтому работает и в редакторах, и в модалках.
-   ================================================ */
+    */
 
-/* ─── КНОПКИ ─────────────────────────────────── */
+/*  КНОПКИ  */
 
 .btn {
   border-radius: 20px;
@@ -91,7 +91,7 @@
   border-radius: 0;
 }
 
-/* ─── КАРТОЧКИ ───────────────────────────────── */
+/* КАРТОЧКИ  */
 
 .card {
   border: 2px solid #007BFF;
@@ -115,7 +115,7 @@
   background-color: #f8fbff;
 }
 
-/* ─── ФОРМ-ЭЛЕМЕНТЫ ──────────────────────────── */
+/*  ФОРМ-ЭЛЕМЕНТЫ */
 
 .form-control,
 .form-select {
@@ -165,7 +165,7 @@ textarea.form-control {
   border-color: #007BFF;
 }
 
-/* ─── МОДАЛЬНЫЕ ОКНА ─────────────────────────── */
+/*  МОДАЛЬНЫЕ ОКНА  */
 
 .modal-content {
   border-radius: 24px;
@@ -196,7 +196,7 @@ textarea.form-control {
   background-color: #f8fbff;
 }
 
-/* ─── ТАБЛИЦЫ ────────────────────────────────── */
+/* ТАБЛИЦЫ  */
 
 .table {
   font-family: 'Inter', sans-serif;
@@ -226,7 +226,7 @@ textarea.form-control {
   padding: 0.65rem 0.9rem;
 }
 
-/* ─── БЕЙДЖИ ─────────────────────────────────── */
+/*  БЕЙДЖИ */
 
 .badge {
   border-radius: 10px;
@@ -236,7 +236,7 @@ textarea.form-control {
   letter-spacing: 0.02em;
 }
 
-/* ─── АЛЕРТЫ ─────────────────────────────────── */
+/*АЛЕРТЫ  */
 
 .alert {
   border-radius: 15px;
@@ -244,7 +244,7 @@ textarea.form-control {
   font-weight: 500;
 }
 
-/* ─── АККОРДЕОН ──────────────────────────────── */
+/*  АККОРДЕОН  */
 
 .accordion-item {
   border-radius: 15px;
@@ -273,7 +273,7 @@ textarea.form-control {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
 }
 
-/* ─── LIST GROUP ─────────────────────────────── */
+/*  LIST GROUP */
 
 .list-group-item {
   border-color: #d0e8ff;
@@ -287,7 +287,7 @@ textarea.form-control {
   border-radius: 0 0 12px 12px;
 }
 
-/* ─── PAGINATION ─────────────────────────────── */
+/*  ПАГИНАЦИЯ  */
 
 .page-link {
   border-radius: 10px;
@@ -302,13 +302,13 @@ textarea.form-control {
   border-color: #007BFF;
 }
 
-/* ─── СПИННЕР ────────────────────────────────── */
+/*  СПИННЕР */
 
 .spinner-border {
   color: #007BFF;
 }
 
-/* ─── БЛОК-РЕДАКТОР: стили кнопок и интерфейса ── */
+/*  БЛОК-РЕДАКТОР: стили кнопок и интерфейса */
 
 /* Кнопки режима редактора / предпросмотра */
 .block-editor .btn-group .btn {
@@ -321,7 +321,7 @@ textarea.form-control {
   font-weight: 500;
 }
 
-/* ─── ПРЕДПРОСМОТР РЕДАКТОРА ─────────────────── */
+/*  ПРЕДПРОСМОТР РЕДАКТОРА  */
 
 /* Обёртка, которая имитирует реальную страницу контента */
 .editor-preview-container {
